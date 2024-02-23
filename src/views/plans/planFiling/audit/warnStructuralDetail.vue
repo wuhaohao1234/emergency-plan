@@ -1,7 +1,7 @@
 <!--预测预警结构化详情-->
 <template>
   <div id="warnStructuralDetail">
-    <div v-if="earlyWarningList.length>0">
+    <div  class="warnStructuralDetailDiv" v-if="earlyWarningList.length>0">
       <div class="left-content">
         <div style="margin-top: 30px;font-size: 20px">
           <div @click="showTab('one')" style="margin-top: 100px" :class="{ 'selected': activeName === 'one', 'left-button': activeName !== 'one'}">
@@ -26,7 +26,7 @@
       </div>
       <div class="right-content">
         <div class="right-top">
-          <div v-if="earlyWarningList.includes(1)" style="float: left;margin-left: 200px;margin-top: 20px">
+          <div v-if="earlyWarningList.includes(1)" style="margin-top: 20px">
             <div @click="selectLevel(1)" :class="{ 'active': activeButton === 1 }">
               <div style="position: relative;text-align: center;">
                 <img src="@/assets/images/detail/firstLevel.png" alt="" class="top-level">
@@ -37,7 +37,7 @@
               </div>
             </div>
           </div>
-          <div v-if="earlyWarningList.includes(2)" style="float: left;margin-left: 100px;margin-top: 20px">
+          <div v-if="earlyWarningList.includes(2)" style="margin-top: 20px">
             <div @click="selectLevel(2)" :class="{ 'active': activeButton === 2 }">
               <div style="position: relative;text-align: center;">
                 <img src="@/assets/images/detail/secondLevel.png" alt="" class="top-level">
@@ -48,7 +48,7 @@
               </div>
             </div>
           </div>
-          <div v-if="earlyWarningList.includes(3)" style="float: left;margin-left: 100px;margin-top: 20px">
+          <div v-if="earlyWarningList.includes(3)" style="margin-top: 20px">
             <div @click="selectLevel(3)" :class="{ 'active': activeButton === 3 }">
               <div style="position: relative;text-align: center;">
                 <img src="@/assets/images/detail/thirdLevel.png" alt="" class="top-level">
@@ -59,7 +59,7 @@
               </div>
             </div>
           </div>
-          <div v-if="earlyWarningList.includes(4)" style="float: left;margin-left: 100px;margin-top: 20px">
+          <div v-if="earlyWarningList.includes(4)" style="margin-top: 20px">
             <div @click="selectLevel(4)" :class="{ 'active': activeButton === 4 }">
               <div style="position: relative;text-align: center;">
                 <img src="@/assets/images/detail/fourLevel.png" alt="" class="top-level">
@@ -171,8 +171,9 @@ export default {
 
 <style lang="scss">
 #warnStructuralDetail {
-  display: flex;
-
+  .warnStructuralDetailDiv {
+    display: flex;
+  } 
   .left-content {
     width: 278px;
     height: 700px;
@@ -180,7 +181,6 @@ export default {
     background-size: 278px 700px;
     background-repeat: no-repeat;
     background-position: center; /* 或者根据需要调整背景图的位置 */
-    float: left;
 
     .selected{
       position: relative;
@@ -209,20 +209,19 @@ export default {
     }
   }
   .right-content {
-    float: left;
-    width: 1250px;
+    // width: 1250px;
     height: 700px;
     margin-left: 45px;
-
+    flex: 1;
     .right-top {
-      width: 1250px;
+      // width: 1250px;
       height: 200px;
-      background-size: 1250px 200px;
+      background-size: 100% 200px;
       background-repeat: no-repeat;
       background-position: center; /* 或者根据需要调整背景图的位置 */
       background-image: url("../../../../assets/images/detail/level-bg.png");
       display: flex;
-
+      justify-content: space-around;
       .top-level {
         width: 115px;
         height: 115px;
@@ -234,10 +233,10 @@ export default {
       }
     }
     .right-bottom{
-      width: 1200px;
+      // width: 1200px;
       height: 500px;
       margin-left: 45px;
-      background-size: 1200px 500px;
+      background-size: 100% 500px;
       background-repeat: no-repeat;
       background-position: center;
       background-image: url("../../../../assets/images/detail/content.png");

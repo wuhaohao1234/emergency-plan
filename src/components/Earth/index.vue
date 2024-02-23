@@ -183,7 +183,7 @@ export default {
       starBackground: true,
       resolution: 2048, // 设置分辨率
       center: [106.55, 29.56], // 设置地球的中心为重庆的经度和纬度
-      zoom: 4, // 设置初始缩放级别（可以根据需要调整）
+      zoom: 2, // 设置初始缩放级别（可以根据需要调整）
     });
     e.load()
   }
@@ -199,7 +199,7 @@ export default {
 <style scoped lang="scss">
 .hello{
   width: 700px;
-  height: 100vh;
+  height: 80vh;
   opacity: 0.8;
 }
 </style>

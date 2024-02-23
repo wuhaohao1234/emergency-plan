@@ -2,7 +2,7 @@
 <template>
   <div id="businessChange" v-loading="loading">
     <div class="left">
-      <select-left style="width: 70%;margin-left: 100px"/>
+      <select-left style="margin-left: 100px"/>
     </div>
     <div class="right">
       <div class="system-name">
@@ -114,18 +114,17 @@ export default {
 
 <style scoped>
 #businessChange {
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url("../assets/images/background.png");
   background-size: 100% 100%;
   display: flex;
   .left{
-    width: 55%;
-    float: left;
+    width: 800px;
     text-align: center;
   }
   .right{
-    width: 45%;
-    float: left;
+    /* width: 45%; */
+    flex: 1;
     .system-name {
       display: flex;
       float: right;
